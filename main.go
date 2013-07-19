@@ -7,16 +7,21 @@ Usage:
 
 Where
 
-    -min is the minimum elements in the metric name
+	-min is the minimum elements in the metric name
 	-max is the maximum elements in the metric name
 	-n is the number of metrics to send
 
 Currently, it generates data in a very crappy way (generates a fake metric
 name, random value and the previosu metrics' timestamp bumped by one second)
 
-TODO: User should supply number of different metrics to send
-TODO: Loop over generated metric names, use Perlin-like noise as values and
-      randomly skip entries.
+TODO
+
+ * Specify host
+ * Specify number of different metrics to send
+ * User should supply number of different metrics to send
+ * Loop over generated metric names, use Perlin-like noise as values.
+ * Randomly skip values
+
 */
 package main
 

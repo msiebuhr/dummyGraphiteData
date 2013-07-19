@@ -1,4 +1,4 @@
 dummyGraphiteData
 =================
 
-Small program that generates fake graphite data
+Docs at http://godoc.org/github.com/msiebuhr/dummyGraphiteData
