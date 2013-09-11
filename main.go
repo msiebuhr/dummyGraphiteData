@@ -114,7 +114,7 @@ func main() {
 	}
 
 	// Dial up a server
-	conn, err := net.Dial("tcp", "localhost:8000")
+	conn, err := net.Dial("tcp", "localhost:2003")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
