@@ -109,7 +109,7 @@ func main() {
 		minNameParts = 1
 	}
 	if minNameParts > maxNameParts {
-		fmt.Println("Error: -min (%v) should be smaller than -max (%v)", minNameParts, maxNameParts)
+		fmt.Printf("Error: -min (%v) should be smaller than -max (%v)\n", minNameParts, maxNameParts)
 		os.Exit(1)
 	}
 
