@@ -27,6 +27,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"hash/fnv"
 	"math/rand"
 	"net"
 	"os"
@@ -132,10 +133,14 @@ func main() {
 			if index >= max {
 				break
 			}
+			hash := fnv.New32()
+			hash.Write([]byte(metricName))
+			//fmt.Println(int64(hash.Sum32()) + timeOffset)
+			perlinIndex := float64(int64(hash.Sum32()) + timeOffset)
 			metric := fmt.Sprintf(
 				"%v %.5v %d\n",
 				metricName,
-				rand.NormFloat64()*5+5, // Mostly 0 to 10
+				PerlinNoise_1D(perlinIndex)+float64((int64(hash.Sum32())%10)-5),
 				time.Now().Unix()+timeOffset,
 			)
 			fmt.Print(metric)
