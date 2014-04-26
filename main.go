@@ -1,5 +1,5 @@
 /*
-Package dummyGraphiteData is a program that sends fake graphite data to localhost:8000.
+Package dummyGraphiteData is a program that sends fake graphite data to localhost:2003.
 
 Usage:
 
