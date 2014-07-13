@@ -31,6 +31,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"io"
 )
 
 var minNameParts int
@@ -146,6 +147,15 @@ func main() {
 			fmt.Fprint(conn, metric)
 			index++
 		}
+
+		// Try reading a value from the socket to see if it's closed
+		conn.SetReadDeadline(time.Now().Add(time.Second))
+		_, err := conn.Read([]byte{})
+		if err != nil && err != io.EOF {
+			fmt.Println("Network error:", err.Error())
+			break;
+		}
+
 		timeOffset++
 	}
 }
