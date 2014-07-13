@@ -118,6 +118,7 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+	defer conn.Close()
 
 	index := int64(0)
 	timeOffset := int64(0)
@@ -147,5 +148,4 @@ func main() {
 		}
 		timeOffset++
 	}
-	os.Exit(0)
 }
